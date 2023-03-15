@@ -1,0 +1,14 @@
+<div class="input-forms" style="width: 100%; display: flex; justify-content: center; padding-top: 90px;">
+    <form [formGroup]="searchField" style="width: 60%;"> 
+        <div style="position: relative;">
+            <input type="text" formControlName="search" class="form-control" id="formGroupExampleInput" placeholder="Enter Your Domain Url " autocomplete="off">
+            <div *ngIf="this.searchField.get('search')?.errors && this.searchField.get('search')?.touched " style=" position: absolute; padding: -2px 8px; color: rgba(182, 20, 20, 0.799);">Required   *</div>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 20px 20px;">
+            <span style="cursor: pointer;" routerLink=""><i style="font-size: 20px;" class="fa-sharp fa-solid fa-left-long"></i></span>
+            <button (click)="getInsights()" style="width: 200px; height: 40px;" type="button" class="btn btn-success">Get insights</button>
+            <span (click)="refresh()" style="cursor: pointer;"><i style="font-size: 20px;" class="fa-sharp fa-solid fa-arrows-rotate rotate"></i></span>
+        </div>
+
+    </form>
+</div>
