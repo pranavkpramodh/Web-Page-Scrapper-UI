@@ -12,6 +12,8 @@ export class TableComponent implements OnInit {
   constructor(private ds:DataService) { }
 
   ngOnInit(): void {
+    // for get all datas from collection details
+    // subscribe to observable it returns a observable
     this.ds.getAllData().subscribe(
       (result:any) => {
         this.allData = result.allData;
